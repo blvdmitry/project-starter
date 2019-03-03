@@ -1,0 +1,8 @@
+@import "variables.css";
+
+.root {
+    padding: 12px 16px;
+    background: var(--color_action);
+    border-radius: 2px;
+    color: var(--color_white);
+}

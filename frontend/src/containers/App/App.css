@@ -1,0 +1,9 @@
+@import "variables.css";
+
+.root {
+    height: 100vh;
+    background: var(--color_background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,9 +1,33 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "echo 'frontend'"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "lint": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "css-loader": "^2.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-mixins": "^6.2.1",
+    "postcss-preset-env": "^6.6.0",
+    "raw-loader": "^1.0.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.13.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   }
 }
