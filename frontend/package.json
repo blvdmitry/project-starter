@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "lint": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
+    "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*'",
+    "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
   },
   "devDependencies": {
     "@types/react": "^16.8.6",
