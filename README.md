@@ -1,10 +1,5 @@
-Webstorm - mark assets/js as ignored, mark styles as resource root
-## Project starter kit
+### TODO
 
-### Frontend stack
+#### Frontend:
 
-Build process - `webpack, webpack-dev-server`
-
-Javascript - `typescript, tslint`
-
-CSS - `css-modules, postcss`
+- Add Apollo
