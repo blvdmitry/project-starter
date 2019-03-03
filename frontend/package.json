@@ -4,14 +4,17 @@
   "main": "src/index.tsx",
   "license": "MIT",
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "webpack",
     "start": "webpack-dev-server",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*'",
     "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
   },
   "devDependencies": {
+    "@storybook/react": "^4.1.13",
     "@types/react": "^16.8.6",
     "@types/react-dom": "^16.8.2",
+    "@types/storybook__react": "^4.0.1",
     "css-loader": "^2.1.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
