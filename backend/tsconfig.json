@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./public/assets/js/",
+    "outDir": "./dist",
     "sourceMap": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -12,9 +12,6 @@
     "moduleResolution": "node",
     "baseUrl": "./src/"
   },
-  "files": [
-    "./src/types/global.d.ts"
-  ],
   "include": [
     "./src/**/*"
   ],

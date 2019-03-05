@@ -1,18 +1,20 @@
 const path = require('path');
 
-const APP_DIR = path.resolve(__dirname, 'src');
-const PUBLIC_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, '../src');
+const PUBLIC_DIR = path.resolve(__dirname, '../public');
+const PACKAGES_DIR = path.resolve(__dirname, '../node_modules');
 const PUBLIC_PATH = '/assets/js/';
 
 module.exports = {
+  mode: 'development',
   entry: path.resolve(APP_DIR, 'index.tsx'),
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(PUBLIC_DIR, './assets/js/'),
+    path: path.resolve(PUBLIC_DIR, 'assets/js'),
     publicPath: PUBLIC_PATH
   },
   resolve: {
-    modules: [APP_DIR, path.resolve(__dirname, 'node_modules')],
+    modules: [APP_DIR, PACKAGES_DIR],
     extensions: ['.js', '.json', '.ts', '.tsx', '.css']
   },
   devtool: 'source-map',
@@ -38,7 +40,7 @@ module.exports = {
           localIdentName: '[name]-[local]-[hash:base64:5]',
         }
       }, {
-        loader: 'postcss-loader'
+        loader: 'postcss-loader',
       }]
     }]
   },
