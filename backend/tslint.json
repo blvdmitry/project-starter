@@ -4,5 +4,10 @@
     "import-name": { "severity": "off" },
     "max-line-length": [true, 120],
     "variable-name": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "./migrations"
+    ]
   }
 }
