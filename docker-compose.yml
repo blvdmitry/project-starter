@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: app-frontend
+    build: ./frontend
+    command: yarn start
+    volumes:
+      - ./frontend:/app/frontend
+      - /app/frontend/node_modules
+    ports:
+      - "3000:3000"
+

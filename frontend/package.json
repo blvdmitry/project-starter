@@ -6,7 +6,7 @@
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "webpack --config tools/webpack.config.prod.js",
-    "start": "webpack-dev-server --config tools/webpack.config.js",
+    "start": "webpack-dev-server --config tools/webpack.config.js --host 0.0.0.0",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*'",
     "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
   },

@@ -15,3 +15,4 @@
 - Start prod npm script
 - Fix build script
 - Add sequelizerc?
+- Fix TS any

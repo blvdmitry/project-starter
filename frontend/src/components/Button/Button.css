@@ -8,6 +8,11 @@
     border: 1px solid var(--color_action);
 }
 
+.root:active {
+    position: relative;
+    top: 1px;
+}
+
 .root.--secondary {
     background: var(--color_white);
     color: var(--color_action);

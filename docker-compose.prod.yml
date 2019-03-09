@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: app-frontend
+    build:
+      context: ./frontend
+      dockerfile: ./DockerfileProd
+    ports:
+      - "80:80"
+
