@@ -1,22 +1,17 @@
-### Tech stack
+### Creating new react components
+
+Running `yarn plop` will prompt for component name and create all the boilerplate for you. 
+
+## Tech stack
 
 #### General
-- Docker
-- Docker-compose
-- Webpack
-- Typescript 
-- GraphQL + Apollo
+Docker, Docker-compose, Webpack, Typescript, GraphQL + Apollo
 
 #### Frontend
-- React
-- PostCSS
-- Nginx
+React, PostCSS, Nginx
 
 #### Backend
-- Express
-- PostreSQL
-- Sequelize
-
+Express, PostreSQL, Sequelize
 
 ### TODO
 
