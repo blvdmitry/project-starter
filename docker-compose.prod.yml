@@ -1,6 +1,21 @@
 version: '3'
 
 services:
+  db:
+    container_name: app-db
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+
+  backend:
+    container_name: app-backend
+    build: ./backend
+    command: yarn start:prod
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+
   frontend:
     container_name: app-frontend
     build:
@@ -9,3 +24,5 @@ services:
     ports:
       - "80:80"
 
+volumes:
+  db_data:

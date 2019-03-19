@@ -15,7 +15,7 @@ module.exports = {
   },
   resolve: {
     modules: [APP_DIR, PACKAGES_DIR],
-    extensions: ['.js', '.json', '.ts', '.tsx', '.css']
+    extensions: ['.js', '.json', '.ts', '.tsx', '.pcss']
   },
   devtool: 'source-map',
   stats: 'errors-only',
@@ -29,7 +29,7 @@ module.exports = {
       test: /\.svg$/,
       loader: 'raw-loader'
     }, {
-      test: /\.css$/,
+      test: /\.pcss$/,
       include: APP_DIR,
       use: [{
         loader: 'style-loader'

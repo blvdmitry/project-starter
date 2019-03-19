@@ -4,8 +4,10 @@
   "main": "./src/server.ts",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node src/index.ts --extensions '.ts,.tsx,.js,.jsx' --out-dir dist/src",
-    "build": "babel src/index.ts --extensions '.ts,.tsx,.js,.jsx' --out-dir dist/src",
+    "build": "babel src --extensions '.ts,.tsx,.js,.jsx' --out-dir dist/src",
+    "start:dev": "babel-node src/index.ts --extensions '.ts,.tsx,.js,.jsx' --out-dir dist/src",
+    "start:prod": "pm2 start dist/src/index.js",
+    "restart:prod": "pm2 restart dist/src/index.js",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*'",
     "lint:fix": "tslint --fix -c tslint.json --project tsconfig.json 'src/**/*'"
   },
@@ -13,7 +15,6 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
     "@types/babel__core": "^7.1.0",
@@ -23,13 +24,15 @@
     "@types/dotenv": "^6.1.0",
     "@types/express": "^4.16.1",
     "@types/express-jwt": "^0.0.41",
+    "@types/graphql": "^14.0.7",
     "@types/jsonwebtoken": "^8.3.0",
+    "@types/sequelize": "^4.27.39",
+    "babel-plugin-module-resolver": "^3.2.0",
     "tslint": "^5.13.1",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "@types/sequelize": "^4.27.39",
     "apollo-server-express": "^2.4.8",
     "bcryptjs": "^2.4.3",
     "dotenv": "^6.2.0",

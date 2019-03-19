@@ -3,7 +3,7 @@ declare module '*.svg' {
   export default content;
 }
 
-declare module '*.css' {
+declare module '*.pcss' {
   const content: any;
   export default content;
 }

@@ -3,11 +3,12 @@
   "rules": {
     "import-name": { "severity": "off" },
     "max-line-length": [true, 120],
-    "variable-name": false
+    "variable-name": false,
+    "prefer-array-literal": false
   },
   "linterOptions": {
     "exclude": [
-      "src/**/*.css",
+      "src/**/*.pcss",
       "src/**/*.svg"
     ]
   }

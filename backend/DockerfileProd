@@ -1,0 +1,11 @@
+FROM node:8
+
+WORKDIR /app/backend
+COPY . /app/backend
+
+RUN yarn
+RUN yarn global add sequelize-cli
+RUN yarn global add pm2
+RUN yarn build
+
+EXPOSE 3001

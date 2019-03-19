@@ -1,0 +1,37 @@
+@import "variables.pcss";
+
+.root {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+
+    & svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    & path {
+        fill: currentColor;
+    }
+}
+
+.root.--size-small {
+    width: var(--3dp);
+    height: var(--3dp);
+    line-height: var(--3dp);
+}
+
+.root.--size-medium {
+    width: var(--4dp);
+    height: var(--4dp);
+    line-height: var(--4dp);
+}
+
+.root.--size-large {
+    width: var(--6dp);
+    height: var(--6dp);
+    line-height: var(--6dp);
+}

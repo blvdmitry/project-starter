@@ -1,8 +1,8 @@
 import { configure } from '@storybook/react';
-import 'styles/reset.css';
-import 'styles/global.css';
+import 'styles/reset.pcss';
+import 'styles/global.pcss';
 
-const req = require.context('../src', true, /\.story\.tsx$/);
+const req = require.context('../../src', true, /\.story\.tsx$/);
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename));

@@ -1,4 +1,6 @@
-export const Task = `
+import { gql } from 'apollo-server-express';
+
+export const Task = gql`
   type Task {
     id: Int!
     createdAt: String
@@ -9,7 +11,7 @@ export const Task = `
   }
 `;
 
-export const CreateTaskInput = `
+export const CreateTaskInput = gql`
   input UpdateTaskInput {
     title: String
     description: String

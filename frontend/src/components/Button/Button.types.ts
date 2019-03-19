@@ -1,4 +1,5 @@
 export type Props = {
+  className?: string,
   text: string,
-  secondary?: boolean,
+  variant?: 'secondary',
 };

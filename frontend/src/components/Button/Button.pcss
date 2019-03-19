@@ -1,0 +1,37 @@
+@import "variables.pcss";
+
+.root {
+    padding: var(--3dp) var(--4dp);
+    background: var(--color-action);
+    color: var(--color-white);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-action);
+    position: relative;
+    transition: var(--timing-fast) var(--easing-standard);
+    transition-property: background-color, border-color;
+    cursor: pointer;
+    user-select: none;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    min-width: calc(var(--dp) * 25);
+    @apply --font-body;
+
+    &:hover {
+        background: var(--color-action-dark);
+        border-color: var(--color-action-dark);
+    }
+
+    &:active {
+        top: 1px;
+    }
+}
+
+.root.--secondary {
+    background: transparent;
+    color: var(--color-action);
+
+    &:hover {
+        background: color(var(--color-action) a(0.12));
+        border-color: var(--color-action-dark);
+    }
+}

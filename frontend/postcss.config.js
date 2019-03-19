@@ -3,7 +3,8 @@ module.exports = {
     'postcss-import': {
       path: ['./src/styles/']
     },
-    'postcss-mixins': {},
-    'postcss-preset-env': {}
+    'postcss-apply': {},
+    'postcss-preset-env': { stage: 0, preserve: false },
+    'postcss-color-function': {},
   }
 };

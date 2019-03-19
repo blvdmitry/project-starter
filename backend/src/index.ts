@@ -10,9 +10,9 @@ const app = express();
 const path = '/api';
 const allowedOrigins = ['http://localhost:3000'];
 
-const auth = jwt({ secret, credentialsRequired: false });
-const corsConfig = {
-  origin: (origin: any, callback: any) => {
+const authMiddleware = jwt({ secret, credentialsRequired: false });
+const corsMiddleware = cors({
+  origin: (origin, callback) => {
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.indexOf(origin) === -1) {
@@ -26,14 +26,15 @@ const corsConfig = {
 
     return callback(null, true);
   },
-};
+});
+
 const apolloServer = new ApolloServer({
-  schema,
+  ...schema,
   context: ({ req }: any) => ({ token: req.user }),
 });
 
-app.use(cors(corsConfig));
-app.use(path, auth);
+app.use(corsMiddleware);
+app.use(path, authMiddleware);
 apolloServer.applyMiddleware({ app, path });
 
 app.listen(PORT, () => {

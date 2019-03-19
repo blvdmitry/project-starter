@@ -1,6 +1,8 @@
-export default (sequelize: any, DataTypes: any) => {
+import { Sequelize, DataTypes } from 'sequelize';
+
+export default (sequelize: Sequelize, types: DataTypes) => {
   return sequelize.define('task', {
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
+    title: types.STRING,
+    description: types.STRING,
   });
 };

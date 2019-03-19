@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from 'components/Button';
-import 'styles/reset.css';
-import 'styles/global.css';
-import s from './App.css';
+import 'styles/reset.pcss';
+import 'styles/global.pcss';
+import s from './App.pcss';
 
 const App = () => {
   return (
