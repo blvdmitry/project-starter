@@ -16,10 +16,7 @@ const corsMiddleware = cors({
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = `
-        The CORS policy for this site does not
-        allow access from the specified Origin.
-      `;
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
 
       return callback(new Error(msg), false);
     }
@@ -30,7 +27,7 @@ const corsMiddleware = cors({
 
 const apolloServer = new ApolloServer({
   ...schema,
-  context: ({ req }: any) => ({ token: req.user }),
+  context: ({ req }) => ({ token: req.user }),
 });
 
 app.use(corsMiddleware);

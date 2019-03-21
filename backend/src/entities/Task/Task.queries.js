@@ -1,7 +1,7 @@
 import models from '../../models';
 
 export default {
-  async task (_: any, { id }: any) {
+  async task (_, { id }) {
     const task = await models.task.findOne({
       where: { id },
     });

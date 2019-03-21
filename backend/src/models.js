@@ -3,10 +3,10 @@ import path from 'path';
 import Sequelize from 'sequelize';
 import configObject from './config/config';
 
-const env: any = process.env.NODE_ENV || 'development';
-const config: any = (configObject as any)[env];
-const models: any = {};
-let sequelize: any;
+const env = process.env.NODE_ENV || 'development';
+const config = configObject[env];
+const models = {};
+let sequelize;
 
 if (config.use_env_variable) {
   const variable = process.env[config.use_env_variable];
@@ -24,12 +24,12 @@ const entitiesDir = path.resolve(__dirname, './entities');
 
 fs
   .readdirSync(entitiesDir)
-  .forEach((modelName: any) => {
+  .forEach((modelName) => {
     const model = sequelize.import(path.join(entitiesDir, `./${modelName}/${modelName}.model.js`));
     models[model.name] = model;
   });
 
-Object.keys(models).forEach((modelName: any) => {
+Object.keys(models).forEach((modelName) => {
   if (models[modelName].associate) {
     models[modelName].associate(models);
   }

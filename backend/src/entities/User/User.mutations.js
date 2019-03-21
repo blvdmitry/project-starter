@@ -4,7 +4,7 @@ import models from '../../models';
 import { secret } from '../../config/env';
 
 export default {
-  async signup(_: any, { username, email, password }: any) {
+  async signup(_, { username, email, password }) {
     const user = await models.user.create({
       username,
       email,
@@ -18,7 +18,7 @@ export default {
     );
   },
 
-  async login(_: any, { email, password }: any) {
+  async login(_, { email, password }) {
     const user = await models.user.findOne({ where: { email } });
     const error = 'Wrong email or password';
 

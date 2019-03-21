@@ -48,7 +48,7 @@ export default {
     },
   },
   directiveResolvers: {
-    isAuthenticated: (next: any, source: any, args: any, context: any) => {
+    isAuthenticated: (next, source, args, context) => {
       if (context.user) return next();
       throw new Error('Must be authenticated');
     },
