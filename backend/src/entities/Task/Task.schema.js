@@ -11,7 +11,7 @@ export const Task = gql`
   }
 `;
 
-export const CreateTaskInput = gql`
+export const UpdateTaskInput = gql`
   input UpdateTaskInput {
     title: String
     description: String

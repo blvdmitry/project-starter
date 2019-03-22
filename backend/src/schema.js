@@ -4,7 +4,7 @@ import userMutations from './entities/User/User.mutations';
 import { User } from './entities/User/User.schema';
 import taskQueries from './entities/Task/Task.queries';
 import taskMutations from './entities/Task/Task.mutations';
-import { Task, CreateTaskInput } from './entities/Task/Task.schema';
+import { Task, UpdateTaskInput } from './entities/Task/Task.schema';
 
 const RootQuery = gql`
   type RootQuery {
@@ -19,12 +19,12 @@ const RootMutation = gql`
     signup (username: String!, email: String!, password: String!): String
     login (email: String!, password: String!): String
 
-    createTask (task: CreateTaskInput!): Task @isAuthenticated
+    createTask (task: UpdateTaskInput!): Task @isAuthenticated
   }
 `;
 
 const SchemaDefinition = gql`
-  directive @isAuthenticated on QUERY | FIELD | MUTATION
+  directive @isAuthenticated on QUERY | FIELD | MUTATION | FIELD_DEFINITION
   schema {
     query: RootQuery
     mutation: RootMutation
@@ -35,7 +35,7 @@ export default {
   typeDefs: [
     SchemaDefinition, RootQuery, RootMutation,
     User,
-    Task, CreateTaskInput,
+    Task, UpdateTaskInput,
   ],
   resolvers: {
     RootQuery: {
