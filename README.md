@@ -21,6 +21,6 @@ Express, PostreSQL, Sequelize
 - Extract css in production build
 
 #### Backend:
-- ENV: allowedOrigins, graphiql. Replace env.ts with proper env
+- ENV: allowedOrigins. Replace env.ts with proper env
 - Start prod npm script
 - Fix build script
