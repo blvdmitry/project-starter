@@ -8,7 +8,7 @@ import schema from './schema';
 const PORT = 3001;
 const app = express();
 const path = '/api';
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
 
 const authMiddleware = jwt({ secret, credentialsRequired: false });
 const corsMiddleware = cors({

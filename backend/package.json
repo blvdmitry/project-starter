@@ -8,6 +8,8 @@
     "start:dev": "babel-node src/index.js --extensions '.js,.jsx' --out-dir dist/src",
     "start:prod": "pm2 start dist/src/index.js",
     "restart:prod": "pm2 restart dist/src/index.js",
+    "db:migrate": "sequelize db:migrate --migrations-path ./src/migrations",
+    "db:seed": "sequelize db:seed:all",
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'"
   },
@@ -15,7 +17,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "7.3.4",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
     "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.2.0",

@@ -11,7 +11,7 @@ const db = {
   port: 5432,
 };
 
-export default {
+module.exports = {
   development: db,
   production: db,
 };
