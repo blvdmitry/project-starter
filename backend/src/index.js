@@ -35,5 +35,6 @@ app.use(path, authMiddleware);
 apolloServer.applyMiddleware({ app, path });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server is running on http://localhost:${PORT}/api`);
 });
