@@ -40,8 +40,10 @@ Express, PostreSQL, Sequelize
 
 #### Frontend:
 - Fix apollo cache for tasks
+- Apollo error handling
 - Change apollo client url for production (or maybe development too)
 - Extract css in production build
 
 #### Backend:
 - ENV: allowedOrigins, replace env.js with proper env
+- Watcher for development docker-compose up
