@@ -1,0 +1,48 @@
+@import "variables.pcss";
+
+.root {
+    height: 100vh;
+    width: 100vw;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    width: 400px;
+}
+
+.task {
+    margin-bottom: var(--4dp);
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--4dp);
+    display: flex;
+    align-items: center;
+}
+
+.field {
+    border-radius: var(--border-radius);
+    background: var(--color-white);
+    padding: var(--4dp);
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    @apply --font-body;
+}
+
+.title {
+    @apply --font-title;
+}
+
+.text {
+    color: var(--color-gray-text);
+    @apply --font-caption;
+}
+
+.content {
+    flex-grow: 1;
+    padding-right: var(--4dp);
+}

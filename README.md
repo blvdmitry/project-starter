@@ -39,8 +39,9 @@ Express, PostreSQL, Sequelize
 ### TODO
 
 #### Frontend:
-- Add Apollo
+- Fix apollo cache for tasks
+- Change apollo client url for production (or maybe development too)
 - Extract css in production build
 
 #### Backend:
-- ENV: allowedOrigins. Replace env.ts with proper env
+- ENV: allowedOrigins, replace env.js with proper env

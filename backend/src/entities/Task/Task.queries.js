@@ -1,12 +1,16 @@
 import models from '../../models';
 
 export default {
-  async task (_, { id }) {
+  async tasks() {
+    return models.task.findAll();
+  },
+
+  async task(_, { id }, { user }) {
     const task = await models.task.findOne({
       where: { id },
     });
 
-    if (!task) throw new Error('Task not found');
+    if (!task || !user) throw new Error('Task not found');
     return task;
   },
 };

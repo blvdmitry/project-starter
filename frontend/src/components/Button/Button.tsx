@@ -4,11 +4,11 @@ import * as T from './Button.types';
 import s from './Button.pcss';
 
 const Button = (props: T.Props) => {
-  const { text, variant, className } = props;
+  const { text, variant, className, onClick } = props;
   const rootClassNames = classnames(s.root, className, variant && s[`--${variant}`]);
 
   return (
-    <button className={rootClassNames}>
+    <button className={rootClassNames} onClick={onClick} type="button">
       { text }
     </button>
   );

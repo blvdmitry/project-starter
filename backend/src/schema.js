@@ -8,9 +8,10 @@ import { Task, UpdateTaskInput } from './entities/Task/Task.schema';
 
 const RootQuery = gql`
   type RootQuery {
-    me: User @isAuthenticated
+    me: User 
 
-    task (id: Int!): Task
+    task (id: Int!): Task @isAuthenticated
+    tasks: [Task]
   }
 `;
 
@@ -20,7 +21,7 @@ const RootMutation = gql`
     login (email: String!, password: String!): String
 
     createTask (task: UpdateTaskInput!): Task
-    completeTask (id: String!): String
+    completeTask (id: Int!): String
   }
 `;
 
