@@ -1,3 +1,4 @@
+import { ApolloError } from 'apollo-server-express';
 import models from '../../models';
 
 export default {
@@ -10,7 +11,7 @@ export default {
   async completeTask(_, { id }) {
     const task = await models.task.findById(id);
 
-    if (!task) throw new Error('Can\'t delete task');
+    if (!task) throw new ApolloError('Can\'t delete task');
 
     await models.task.destroy({
       where: { id },

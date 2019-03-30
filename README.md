@@ -39,7 +39,6 @@ Node.js, Express, PostreSQL, Sequelize
 ### TODO
 
 #### Frontend:
-- Apollo error handling
 - Change apollo client url for production (or maybe development too)
 - Extract css in production build
 

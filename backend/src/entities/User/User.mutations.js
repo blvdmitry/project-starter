@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import { AuthenticationError } from 'apollo-server-express';
 import models from '../../models';
 import { secret } from '../../config/env';
 
@@ -26,7 +27,7 @@ export default {
 
     const valid = bcrypt.compareSync(password, user.password);
 
-    if (!valid) throw new Error(error);
+    if (!valid) throw new AuthenticationError(error);
 
     return jwt.sign(
       { id: user.id, email: user.email },
