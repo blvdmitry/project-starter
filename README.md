@@ -26,13 +26,13 @@ There are production scripts available:
 ### Tech stack
 
 #### General
-Docker, Docker-compose, Webpack, Typescript, GraphQL + Apollo
+Docker, Docker-compose, GraphQL + Apollo
 
 #### Frontend
-React, PostCSS, Nginx
+Typescript, React, PostCSS, Nginx, Webpack
 
 #### Backend
-Express, PostreSQL, Sequelize
+Node.js, Express, PostreSQL, Sequelize
 
 ---
 
