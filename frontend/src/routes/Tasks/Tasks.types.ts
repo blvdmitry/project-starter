@@ -1,13 +1,8 @@
 import { ChildProps } from 'react-apollo';
-
-export type Task = {
-  id: string,
-  title: string,
-  description?: string,
-};
+import * as TTask from 'graphql/entities/Task/Task.types';
 
 export type GqlResponse = {
-  tasks: Array<Task>,
+  tasks: Array<TTask.Entity>,
 };
 
 export type Props = ChildProps<{}, GqlResponse>;

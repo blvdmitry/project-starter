@@ -1,17 +1,14 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import Button from 'components/Button';
-import client from 'graphql/client';
+import { createTask, completeTask } from 'graphql/entities/Task/Task.mutations';
 import s from './Tasks.pcss';
-import { query, complete, create } from './Tasks.schema';
+import { query } from './Tasks.schema';
 import * as T from './Tasks.types';
 
 const Task = (props: T.Task) => {
   const handleClick = async () => {
-    await client.mutate({
-      mutation: complete,
-      variables: { id: props.id },
-    });
+    return completeTask(props.id);
   };
 
   return (
@@ -36,17 +33,14 @@ const Tasks = (props: T.Props) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await client.mutate({
-      mutation: create,
-      variables: { task: { title: value } },
-    });
+    await createTask({ title: value });
     setValue('');
   };
 
   return (
     <div className={s.root}>
       <div className={s.inner}>
-        { data && data.tasks && data.tasks.map(task => <Task {...task} />) }
+        { data && data.tasks && data.tasks.map(task => <Task key={task.id} {...task} />) }
 
         <form onSubmit={handleSubmit}>
           <input

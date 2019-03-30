@@ -4,7 +4,8 @@
     "import-name": { "severity": "off" },
     "max-line-length": [true, 120],
     "variable-name": false,
-    "prefer-array-literal": false
+    "prefer-array-literal": false,
+    "object-shorthand-properties-first": false
   },
   "linterOptions": {
     "exclude": [
