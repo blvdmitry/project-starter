@@ -8,10 +8,11 @@ RUN yarn
 RUN yarn build
 
 # Stage 2 - Production
-FROM nginx:alpine
+FROM nginx
 
-#COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=frontend-build /app/frontend/public /usr/share/nginx/html
+COPY --from=frontend-build /app/frontend/nginx.conf /etc/nginx/nginx.conf
+
 
 EXPOSE 80
 

@@ -7,8 +7,10 @@
     "init": "docker-compose build && cd backend && yarn run db:migrate && cd ..",
     "build": "docker-compose build",
     "start": "docker-compose up",
+    "stop": "docker-compose down",
     "build:prod": "docker-compose -f docker-compose.prod.yml build",
-    "start:prod": "docker-compose -f docker-compose.prod.yml up"
+    "start:prod": "docker-compose -f docker-compose.prod.yml up",
+    "stop:prod": "docker-compose -f docker-compose.prod.yml down"
   },
   "husky": {
     "hooks": {

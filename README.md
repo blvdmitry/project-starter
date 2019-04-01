@@ -40,6 +40,7 @@ Node.js, Express, PostreSQL, Sequelize
 
 #### Frontend:
 - Change apollo client url for production (or maybe development too)
+- Fix nginx routes for production
 - Extract css in production build
 
 #### Backend:
