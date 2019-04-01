@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --extensions '.js,.jsx' --out-dir dist/src",
     "start:dev": "babel-node src/index.js --extensions '.js,.jsx' --out-dir dist/src",
-    "start:prod": "pm2 start dist/src/index.js --no-auto-exit",
+    "start:prod": "pm2 start dist/src/index.js --no-daemon",
     "restart:prod": "pm2 restart dist/src/index.js",
     "db:migrate": "sequelize db:migrate --migrations-path ./src/migrations",
     "db:seed": "sequelize db:seed:all",

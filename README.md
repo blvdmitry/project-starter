@@ -39,8 +39,7 @@ Node.js, Express, PostreSQL, Sequelize
 ### TODO
 
 #### Frontend:
-- Change apollo client url for production (or maybe development too)
-- Fix nginx routes for production
+- Change apollo client url for production to /api
 - Extract css in production build
 
 #### Backend:
