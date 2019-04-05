@@ -7,3 +7,5 @@ declare module '*.pcss' {
   const content: any;
   export default content;
 }
+
+declare var DEV: boolean;

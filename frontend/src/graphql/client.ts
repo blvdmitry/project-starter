@@ -6,7 +6,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AUTH_TOKEN } from 'constants/localStorage';
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:3001/api/?',
+  uri: DEV ? 'http://localhost:3001/api/' : '/api/',
 });
 
 const authLink = setContext((_, { headers }) => {

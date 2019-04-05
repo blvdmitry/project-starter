@@ -1,14 +1,12 @@
 version: '3'
 
 services:
-  db:
-    container_name: app-db
+  db-dev:
     image: postgres
     volumes:
-      - db_data:/var/lib/postgresql/data/
+      - db_data_dev:/var/lib/postgresql/data/
 
-  backend:
-    container_name: app-backend
+  backend-dev:
     build: ./backend
     command: yarn start:dev
     volumes:
@@ -16,10 +14,9 @@ services:
     ports:
       - "3001:3001"
     depends_on:
-      - db
+      - db-dev
 
-  frontend:
-    container_name: app-frontend
+  frontend-dev:
     build: ./frontend
     command: yarn start
     volumes:
@@ -28,5 +25,5 @@ services:
       - "3000:3000"
 
 volumes:
-  db_data:
+  db_data_dev:
 

@@ -2,31 +2,26 @@ version: '3'
 
 services:
   db:
-    container_name: app-db-prod
     image: postgres
     volumes:
       - db_data:/var/lib/postgresql/data/
 
-  backend:
-    container_name: app-backend-prod
+  backend-prod:
     build:
       context: ./backend
       dockerfile: ./DockerfileProd
     command: yarn start:prod
-    ports:
-      - "3001:3001"
     depends_on:
       - db
 
-  frontend:
-    container_name: app-frontend-prod
+  frontend-prod:
     build:
       context: ./frontend
       dockerfile: ./DockerfileProd
     ports:
       - "80:80"
     depends_on:
-      - backend
+      - backend-prod
 
 volumes:
   db_data:
