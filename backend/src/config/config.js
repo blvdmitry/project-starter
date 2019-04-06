@@ -1,7 +1,3 @@
-const dotenv = require('dotenv');
-
-dotenv.config();
-
 const db = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,

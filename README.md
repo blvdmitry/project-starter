@@ -7,10 +7,18 @@ Can be used for working on the whole app with frontend and backend or just for o
 
 > This project uses Docker, so you will have to install it and docker-compose in order to use it.
 
-In order to start using the starter you will need to clone the repo and run `yarn init` in the root folder.
-This will build your Docker containers and run the database migrations.
+1. Clone the repo and run `yarn init` in the root folder.
+   This will build your Docker containers and run the database migrations.
+   
+2. Create a `.env` file in the `backend` directory. 
+   Project relies on it in the code but it's ignored not to make your secret variables public.
 
-Running `yarn start` after will run frontend and backend on localhost.
+3. Fill `.env` file with following variables and assign values to them:
+```
+    
+```
+
+4. Running `yarn start` after will run frontend and backend on localhost.
 
 ### Creating new react components
 
@@ -40,6 +48,7 @@ Node.js, Express, PostreSQL, Sequelize
 
 #### Frontend:
 - Extract css in production build
+- Add hash to production bundle
 
 #### Backend:
 - ENV: allowedOrigins, replace env.js with proper env

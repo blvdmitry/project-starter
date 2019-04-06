@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { AuthenticationError } from 'apollo-server-express';
 import models from '../../models';
-import { secret } from '../../config/env';
 
 export default {
   async signup(_, { username, email, password }) {
@@ -14,7 +13,7 @@ export default {
 
     return jwt.sign(
       { id: user.id, email: user.email },
-      secret,
+      process.env.JWT_SECRET,
       { expiresIn: '1y' },
     );
   },
@@ -31,7 +30,7 @@ export default {
 
     return jwt.sign(
       { id: user.id, email: user.email },
-      secret,
+      process.env.JWT_SECRET,
       { expiresIn: '1y' },
     );
   },
