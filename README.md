@@ -34,7 +34,8 @@ Running `yarn plop` in `frontend` folder will prompt for component name and crea
 There are production scripts available:
 
 `yarn build:prod` - builds docker containers in production environment
-`yarn start:propd` - runs built production docker containers
+
+`yarn start:prod` - runs built production docker containers
 
 ### Tech stack
 
