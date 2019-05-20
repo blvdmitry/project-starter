@@ -1,21 +1,30 @@
 @import "./unit.pcss";
 
 :root {
-    --font-family: "BlinkMacSystemFont", -apple-system, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+    --font-family: "BlinkMacSystemFont", -apple-system, "Helvetica", "Arial", sans-serif;
 
-    --font-size-caption: var(--3dp);
+    --font-size-tiny: 10px;
+    --font-size-caption: 12px;
     --font-size-body: 14px;
-    --font-size-title: var(--4dp);
-    --font-size-heading: var(--6dp);
-    --font-size-promo: var(--12dp);
+    --font-size-title: 16px;
+    --font-size-heading: 24px;
+    --font-size-promo: 32px;
 
-    --line-height-caption: var(--5dp);
+    --line-height-tiny: var(--5dp);
+    --line-height-caption: var(--4dp);
     --line-height-body: var(--5dp);
     --line-height-title: var(--6dp);
-    --line-height-heading: var(--7dp);
-    --line-height-promo: var(--18dp);
+    --line-height-heading: var(--8dp);
+    --line-height-promo: var(--12dp);
 
-    --font-weight-bold: 500;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    --font-tiny: {
+        font-size: var(--font-size-tiny);
+        line-height: var(--line-height-tiny);
+    };
 
     --font-caption: {
         font-size: var(--font-size-caption);
@@ -42,6 +51,5 @@
     --font-promo: {
         font-size: var(--font-size-promo);
         line-height: var(--line-height-promo);
-        font-weight: var(--font-weight-bold);
-    }
+    };
 }

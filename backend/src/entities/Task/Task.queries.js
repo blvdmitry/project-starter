@@ -1,16 +1,15 @@
-import models from '../../models';
+import { getAll } from 'utilities/mock';
+import { get } from 'http';
 
 export default {
-  async tasks() {
-    return models.task.findAll();
+  tasks() {
+    return getAll('Task');
   },
 
-  async task(_, { id }, { user }) {
-    const task = await models.task.findOne({
-      where: { id },
-    });
+  task(_, { id }, { user }) {
+    const task = get('Task', id);
 
-    if (!task || !user) throw new Error('Task not found');
+    if (!user || !task) throw new Error('Task not found');
     return task;
   },
 };

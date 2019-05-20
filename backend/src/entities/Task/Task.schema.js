@@ -1,17 +1,13 @@
 import { gql } from 'apollo-server-express';
 
-export const Task = gql`
+export default gql`
   type Task {
-    id: Int!
-    createdAt: String
-    updatedAt: String
-    userId: Int!
+    id: ID!
+    userId: ID!
     title: String!
     description: String
   }
-`;
 
-export const UpdateTaskInput = gql`
   input UpdateTaskInput {
     title: String
     description: String

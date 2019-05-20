@@ -13,7 +13,7 @@
     "baseUrl": "./src/"
   },
   "files": [
-    "./src/types/global.d.ts"
+    "./src/types/definitions.d.ts"
   ],
   "include": [
     "./src/**/*"

@@ -28,6 +28,10 @@ module.exports = {
         loader: 'ts-loader'
       }]
     }, {
+      test: /\.(graphql|gql)$/,
+      loader: 'graphql-tag/loader',
+      exclude: /node_modules/,
+    }, {
       test: /\.svg$/,
       loader: 'raw-loader'
     }, {

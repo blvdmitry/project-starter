@@ -21,8 +21,19 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const link = ApolloLink.from([authLink, httpLink]);
-
-export default new ApolloClient({
+const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
 });
+
+export const updateCache = (entityName: string) => {
+  return (cache: any) => {
+    Object.keys(cache.data.data).forEach((key) => {
+      key.match(`^${entityName}$`) && cache.data.delete(key);
+    });
+
+    client.reFetchObservableQueries();
+  };
+};
+
+export default client;

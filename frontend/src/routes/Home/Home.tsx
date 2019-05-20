@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from 'components/Button';
-import history from 'utilities/history';
+import * as routes from 'constants/routes';
+import { navigate } from 'utilities/history';
 import s from './Home.pcss';
 
 const Home = () => {
   const handleClick = () => {
-    history.push('/tasks/');
+    navigate({ routeName: routes.names.tasks });
   };
 
   return (

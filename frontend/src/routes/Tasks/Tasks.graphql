@@ -1,0 +1,7 @@
+query TasksRoute {
+  tasks {
+    id
+    title
+    description
+  }
+}

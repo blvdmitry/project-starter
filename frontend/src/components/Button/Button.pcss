@@ -2,12 +2,12 @@
 
 .root {
     padding: var(--3dp) var(--4dp);
-    background: var(--color-action);
+    background: var(--color-primary);
     color: var(--color-white);
     border-radius: var(--border-radius);
-    border: 2px solid var(--color-action);
+    border: 2px solid var(--color-primary);
     position: relative;
-    transition: var(--timing-fast) var(--easing-standard);
+    transition: var(--speed-fast) var(--easing-standard);
     transition-property: background-color, border-color;
     cursor: pointer;
     user-select: none;
@@ -17,8 +17,8 @@
     @apply --font-body;
 
     &:hover {
-        background: var(--color-action-dark);
-        border-color: var(--color-action-dark);
+        background: var(--color-primary-dark);
+        border-color: var(--color-primary-dark);
     }
 
     &:active {
@@ -28,10 +28,10 @@
 
 .root.--secondary {
     background: transparent;
-    color: var(--color-action);
+    color: var(--color-primary);
 
     &:hover {
-        background: color(var(--color-action) a(0.12));
-        border-color: var(--color-action-dark);
+        background: color(var(--color-primary) a(0.12));
+        border-color: var(--color-primary-dark);
     }
 }

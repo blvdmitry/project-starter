@@ -1,8 +1,0 @@
-FROM node:8
-
-WORKDIR /app/backend
-COPY . /app/backend
-
-RUN yarn && yarn global add sequelize-cli && yarn global add pm2 && yarn build
-
-EXPOSE 3001

@@ -5,11 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions '.js,.jsx' --out-dir dist/src",
-    "start:dev": "babel-node src/index.js --extensions '.js,.jsx' --out-dir dist/src",
+    "start": "babel-watch src/index.js --extensions '.js,.jsx' --out-dir dist/src",
     "start:prod": "pm2 start dist/src/index.js --no-daemon",
     "restart:prod": "pm2 restart dist/src/index.js",
-    "db:migrate": "sequelize db:migrate --migrations-path ./src/migrations",
-    "db:seed": "sequelize db:seed:all",
     "lint": "eslint 'src/**/*'",
     "lint:fix": "eslint --fix 'src/**/*'"
   },
@@ -27,6 +25,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
+    "babel-watch": "^7.0.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
@@ -34,6 +33,7 @@
     "graphql": "^14.1.1",
     "jsonwebtoken": "^8.5.0",
     "pg": "^7.9.0",
-    "sequelize": "^4.43.0"
+    "sequelize": "^4.43.0",
+    "uuid": "^3.3.2"
   }
 }

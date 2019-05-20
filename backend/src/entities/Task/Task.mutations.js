@@ -1,22 +1,16 @@
 import { ApolloError } from 'apollo-server-express';
-import models from '../../models';
+import uuid from 'uuid/v4';
+import { add, remove, get } from 'utilities/mock';
 
 export default {
-  async createTask(_, args) {
-    const task = { ...args.task };
-
-    return models.task.create(task);
+  createTask(_, args) {
+    add('Task', uuid(), args.task);
   },
 
-  async completeTask(_, { id }) {
-    const task = await models.task.findById(id);
+  completeTask(_, { id }) {
+    if (!get('Task', id)) throw new ApolloError('Can\'t delete task');
 
-    if (!task) throw new ApolloError('Can\'t delete task');
-
-    await models.task.destroy({
-      where: { id },
-    });
-
+    remove('Task', id);
     return id;
   },
 };

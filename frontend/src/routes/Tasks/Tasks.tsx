@@ -1,17 +1,15 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { useQuery } from 'react-apollo-hooks';
 import Button from 'components/Button';
-import { createTask, completeTask } from 'graphql/entities/Task/Task.mutations';
-import * as TTask from 'graphql/entities/Task/Task.types';
-import { handleError } from 'graphql/utilities';
+import { createTask, completeTask } from 'api/entities/Task/Task.mutations';
+import * as TTask from 'api/entities/Task/Task.types';
+import { handleError } from 'api/utilities';
 import s from './Tasks.pcss';
-import { query } from './Tasks.schema';
+import schema from './Tasks.graphql';
 import * as T from './Tasks.types';
 
 const Task = (props: TTask.Entity) => {
-  const handleClick = async () => {
-    return completeTask(props.id);
-  };
+  const handleClick = () => completeTask(props.id);
 
   return (
     <div className={s.task}>
@@ -24,8 +22,8 @@ const Task = (props: TTask.Entity) => {
   );
 };
 
-const Tasks = (props: T.Props) => {
-  const { data } = props;
+const Tasks = () => {
+  const { data } = useQuery<T.Data>(schema.TasksRoute);
   const [value, setValue] = React.useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,4 +66,4 @@ const Tasks = (props: T.Props) => {
   );
 };
 
-export default graphql(query)(Tasks);
+export default Tasks;

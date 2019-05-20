@@ -1,0 +1,9 @@
+mutation CompleteTask ($id: ID!) {
+  completeTask (id: $id)
+}
+
+mutation CreateTask ($task: UpdateTaskInput!) {
+  createTask (task: $task) {
+    id
+  }
+}

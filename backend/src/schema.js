@@ -1,16 +1,12 @@
 import { gql } from 'apollo-server-express';
-import userQueries from './entities/User/User.queries';
-import userMutations from './entities/User/User.mutations';
-import { User } from './entities/User/User.schema';
-import taskQueries from './entities/Task/Task.queries';
-import taskMutations from './entities/Task/Task.mutations';
-import { Task, UpdateTaskInput } from './entities/Task/Task.schema';
+import User from './entities/User/User.schema';
+import Task from './entities/Task/Task.schema';
 
 const RootQuery = gql`
   type RootQuery {
-    me: User 
+    me: User
 
-    task (id: Int!): Task @isAuthenticated
+    task (id: ID!): Task @isAuthenticated
     tasks: [Task]
   }
 `;
@@ -21,7 +17,7 @@ const RootMutation = gql`
     login (email: String!, password: String!): String
 
     createTask (task: UpdateTaskInput!): Task
-    completeTask (id: Int!): String
+    completeTask (id: ID!): String
   }
 `;
 
@@ -37,18 +33,8 @@ export default {
   typeDefs: [
     SchemaDefinition, RootQuery, RootMutation,
     User,
-    Task, UpdateTaskInput,
+    Task,
   ],
-  resolvers: {
-    RootQuery: {
-      ...userQueries,
-      ...taskQueries,
-    },
-    RootMutation: {
-      ...userMutations,
-      ...taskMutations,
-    },
-  },
   directiveResolvers: {
     isAuthenticated: (next, source, args, context) => {
       if (context.user) return next();
