@@ -56,5 +56,8 @@ Node.js, Express, PostreSQL, Sequelize
 - Add hash to production bundle
 
 #### Backend:
-- ENV: allowedOrigins, replace env.js with proper env
 - Watcher for development docker-compose up
+- Try out prisma
+
+#### Deployment:
+- Document the deployment process for DO 
